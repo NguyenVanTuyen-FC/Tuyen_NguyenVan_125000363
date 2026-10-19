@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="TrọNhanh.vn - Nền tảng đặt lịch dịch vụ cho thuê phòng trọ uy tín, nhanh chóng thông qua mạng lưới cộng tác viên bản địa tận tâm, dẫn xem phòng miễn phí.">
+    <meta name="keywords"
+        content="thuê phòng trọ, đặt lịch xem phòng, cộng tác viên thuê trọ, phòng trọ sinh viên, TrọNhanh">
+    <title>TrọNhanh.vn - Đặt Lịch Dịch Vụ Cho Thuê Phòng Trọ Qua Cộng Tác Viên</title>
+
+    <!-- Tối ưu hóa hiệu năng: Preconnect tới các máy chủ CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload ảnh LCP Hero: Giúp trình duyệt tải ngay ảnh chính song song với HTML (LCP < 1.0s) -->
+    <link rel="preload" as="image" href="assets/images/hero-room.webp" fetchpriority="high">
+
+    <!-- Google Fonts: Load bất đồng bộ, không chặn luồng hiển thị (Non-render-blocking) -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+    </noscript>
+
+    <!-- Animate.css Library: Load bất đồng bộ, loại bỏ triệt để cảnh báo Render-blocking -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"
+        onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    </noscript>
+
+    <!-- AOS (Animate On Scroll) CSS: Load bất đồng bộ -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" media="print"
+        onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    </noscript>
+
+    <!-- Custom Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================================
+         1. THẺ NGỮ NGHĨA: <header> (Chứa Logo & Navigation)
+         ========================================================================== -->
+    <header class="header">
+        <div class="container header-container">
+            <h1 class="logo animate__animated animate__fadeInLeft">
+                <a href="#hero" class="logo-link" title="TrọNhanh.vn - Trang chủ">
+                    <span class="logo-icon" aria-hidden="true">🏠</span>
+                    <span class="logo-text">TrọNhanh<span class="logo-highlight">.vn</span></span>
+                </a>
+            </h1>
+
+            <!-- 2. THẺ NGỮ NGHĨA: <nav> (Thanh điều hướng chính) -->
+            <nav class="nav animate__animated animate__fadeInDown" aria-label="Điều hướng chính của trang web">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link">Trang chủ</a></li>
+                    <li><a href="#process" class="nav-link">Quy trình</a></li>
+                    <li><a href="#services" class="nav-link">Dịch vụ CTV</a></li>
+                    <li><a href="#rooms" class="nav-link">Phòng nổi bật</a></li>
+                    <li><a href="#collaborators" class="nav-link">Đội ngũ CTV</a></li>
+                    <li><a href="#booking" class="nav-link">Đặt lịch hẹn</a></li>
+                    <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions animate__animated animate__fadeInRight">
+                <!-- Nút chuyển đổi giao diện Sáng / Tối (Dark / Light Mode) -->
+                <div class="theme-toggle-wrapper">
+                    <input type="checkbox" id="theme-toggle" class="theme-toggle-input"
+                        aria-label="Chuyển đổi giao diện sáng tối">
+                    <label for="theme-toggle" class="theme-toggle-label" title="Chuyển đổi giao diện Sáng / Tối">
+                        <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+                        <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+                        <span class="theme-toggle-ball" aria-hidden="true"></span>
+                    </label>
+                </div>
+
+                <nav class="header-cta" aria-label="Nút đặt lịch nhanh">
+                    <a href="#booking" class="btn btn-primary btn-sm">Đặt Lịch Ngay</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         3. THẺ NGỮ NGHĨA: <main> (Khu vực nội dung chính của toàn trang)
+         ========================================================================== -->
+    <main id="main-content">
+
+        <!-- SECTION 1: HERO SECTION -->
+        <section id="hero" class="hero-section" aria-labelledby="hero-heading">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="hero-badge animate__animated animate__fadeInDown">
+                        <span class="badge-dot" aria-hidden="true"></span> Giải Pháp Thuê Phòng Trọ Thế Hệ Mới
+                    </p>
+
+                    <h2 id="hero-heading" class="animate__animated animate__fadeInLeft">
+                        Đặt Lịch Thuê Phòng Trọ Nhanh Chóng Cùng <span class="text-gradient">Cộng Tác Viên Uy Tín</span>
+                    </h2>
+
+                    <p class="hero-description animate__animated animate__fadeIn">
+                        Xóa bỏ hoàn toàn nỗi lo phòng ảo, ép giá hay mất cọc. Đội ngũ cộng tác viên (CTV) tại từng khu
+                        vực sẽ đồng hành dẫn bạn xem phòng thực tế, kiểm tra tiện nghi và hỗ trợ ký hợp đồng minh bạch
+                        với chi phí <strong>0đ</strong> cho người thuê.
+                    </p>
+
+                    <!-- Danh sách ưu điểm: Dùng thẻ ngữ nghĩa <ul> thay vì lạm dụng <div> -->
+                    <ul class="hero-features animate__animated animate__fadeIn" role="list">
+                        <li class="feature-item">
+                            <span class="feature-icon" aria-hidden="true">✓</span>
+                            <span>100% CTV xác minh danh tính</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon" aria-hidden="true">✓</span>
+                            <span>Dẫn xem phòng trực tiếp 0đ</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon" aria-hidden="true">✓</span>
+                            <span>Phản hồi lịch hẹn trong 15 phút</span>
+                        </li>
+                    </ul>
+
+                    <nav class="hero-buttons animate__animated animate__fadeInUp" aria-label="Hành động chính Hero">
+                        <a href="#booking" class="btn btn-primary btn-lg">
+                            <span>📅 Đặt Lịch Xem Phòng Ngay</span>
+                        </a>
+                        <a href="#rooms" class="btn btn-outline btn-lg">
+                            <span>🔍 Khám Phá Phòng Trọ</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Tối ưu hiệu năng đỉnh cao: WebP nén siêu nhẹ, width/height cố định, fetchpriority cao -->
+                <figure class="hero-visual" data-aos="fade-left" data-aos-duration="800">
+                    <div class="hero-image-wrapper">
+                        <img src="assets/images/hero-room.webp"
+                            alt="Không gian phòng trọ hiện đại, tiện nghi và sạch sẽ" class="hero-img" width="600"
+                            height="420" fetchpriority="high" decoding="async">
+
+                        <!-- Floating Badges điểm nhấn -->
+                        <div class="hero-floating-card floating-card-top">
+                            <span class="floating-icon" aria-hidden="true">⚡</span>
+                            <div class="floating-text">
+                                <strong>Hẹn Xem Trong Ngày</strong>
+                                <small>CTV sẵn sàng đón dẫn 24/7</small>
+                            </div>
+                        </div>
+
+                        <div class="hero-floating-card floating-card-bottom">
+                            <span class="floating-icon" aria-hidden="true">⭐</span>
+                            <div class="floating-text">
+                                <strong>4.9 / 5.0 Hài Lòng</strong>
+                                <small>Hơn 1,500+ lượt dẫn thành công</small>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 2: QUY TRÌNH 4 BƯỚC ĐẶT LỊCH (Semantic <section> & <article>)
+             ========================================================================== -->
+        <section id="process" class="process-section" aria-labelledby="process-heading">
+            <div class="container">
+                <header class="section-title" data-aos="fade-up">
+                    <span class="section-subtitle">Quy Trình Chuyên Nghiệp</span>
+                    <h2 id="process-heading">4 Bước Thuê Phòng Thông Qua Cộng Tác Viên</h2>
+                    <p>Mô hình kết nối minh bạch, an toàn và tiết kiệm tối đa thời gian của bạn</p>
+                </header>
+
+                <div class="process-grid">
+                    <!-- Bước 1 -->
+                    <article class="process-card" data-aos="fade-up" data-aos-delay="100">
+                        <span class="step-number" aria-hidden="true">01</span>
+                        <span class="step-icon" aria-hidden="true">🔎</span>
+                        <h3>Chọn Phòng Phù Hợp</h3>
+                        <p>Duyệt danh sách phòng trọ thật được kiểm duyệt và cập nhật thực tế bởi các CTV phụ trách từng
+                            địa bàn.</p>
+                    </article>
+
+                    <!-- Bước 2 -->
+                    <article class="process-card" data-aos="fade-up" data-aos-delay="200">
+                        <span class="step-number" aria-hidden="true">02</span>
+                        <span class="step-icon" aria-hidden="true">📲</span>
+                        <h3>Đặt Lịch Hẹn Xem</h3>
+                        <p>Chọn thời gian mong muốn, CTV phụ trách khu vực sẽ chủ động liên hệ lại sau 15 phút để xác
+                            nhận điểm hẹn.</p>
+                    </article>
+
+                    <!-- Bước 3 -->
+                    <article class="process-card" data-aos="fade-up" data-aos-delay="300">
+                        <span class="step-number" aria-hidden="true">03</span>
+                        <span class="step-icon" aria-hidden="true">🛵</span>
+                        <h3>CTV Dẫn Xem Trực Tiếp</h3>
+                        <p>CTV đón bạn tại điểm hẹn, dẫn xem thực tế, kiểm tra tiện nghi điện nước, an ninh và môi
+                            trường xung quanh.</p>
+                    </article>
+
+                    <!-- Bước 4 -->
+                    <article class="process-card" data-aos="fade-up" data-aos-delay="400">
+                        <span class="step-number" aria-hidden="true">04</span>
+                        <span class="step-icon" aria-hidden="true">📝</span>
+                        <h3>Hỗ Trợ Ký Hợp Đồng</h3>
+                        <p>CTV đồng hành đàm phán giá tốt nhất với chủ trọ, rà soát điều khoản hợp đồng rõ ràng, bảo đảm
+                            quyền lợi đôi bên.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 3: DỊCH VỤ CỘNG TÁC VIÊN (Semantic <section> & <article>)
+             ========================================================================== -->
+        <section id="services" class="services-section" aria-labelledby="services-heading">
+            <div class="container">
+                <header class="section-title" data-aos="fade-up">
+                    <span class="section-subtitle">Lợi Ích Vượt Trội</span>
+                    <h2 id="services-heading">Dịch Vụ Hỗ Trợ Độc Quyền Từ Mạng Lưới CTV</h2>
+                    <p>Vì sao bạn nên đặt lịch xem phòng qua hệ thống CTV TrọNhanh.vn?</p>
+                </header>
+
+                <div class="services-grid">
+                    <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <figure class="service-icon-box">
+                            <span class="service-icon" aria-hidden="true">🧭</span>
+                        </figure>
+                        <h3>Dẫn Xem & Tư Vấn Địa Bàn</h3>
+                        <p>Cộng tác viên là người bản địa sinh sống lâu năm tại khu vực, am hiểu sâu về an ninh, giao
+                            thông, giá cả sinh hoạt và các trường học lân cận.</p>
+                        <ul class="service-list">
+                            <li>Dẫn xem linh hoạt cả buổi tối và ngày cuối tuần</li>
+                            <li>Đưa đón tại điểm hẹn nếu bạn chưa quen đường sá</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <figure class="service-icon-box">
+                            <span class="service-icon" aria-hidden="true">🔍</span>
+                        </figure>
+                        <h3>Thẩm Định & Xác Minh Phòng Thật</h3>
+                        <p>Nói KHÔNG với hình ảnh ảo hoặc địa chỉ sai lệch. Mỗi căn phòng đều được CTV đến tận nơi chụp
+                            ảnh, quay video thực tế trước khi hiển thị.</p>
+                        <ul class="service-list">
+                            <li>Xác nhận tình trạng phòng trống chính xác 100%</li>
+                            <li>Kiểm tra hệ thống điện nước, wifi và an ninh trước</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <figure class="service-icon-box">
+                            <span class="service-icon" aria-hidden="true">🤝</span>
+                        </figure>
+                        <h3>Bảo Vệ Quyền Lợi Khách Thuê</h3>
+                        <p>Đóng vai trò cầu nối công tâm giữa người thuê và chủ nhà trọ, giúp bạn thương lượng giá thuê,
+                            tiền đặt cọc và các điều khoản pháp lý an toàn.</p>
+                        <ul class="service-list">
+                            <li>Kiểm tra giấy tờ sở hữu hợp pháp của chủ nhà</li>
+                            <li>Miễn phí 100% dịch vụ trọn đời cho khách thuê</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 4: DANH SÁCH PHÒNG TRỌ KÈM CTV PHỤ TRÁCH (Semantic <article>)
+             ========================================================================== -->
+        <section id="rooms" class="rooms-section" aria-labelledby="rooms-heading">
+            <div class="container">
+                <header class="section-title" data-aos="fade-up">
+                    <span class="section-subtitle">Phòng Trọ Đang Mở Lịch Hẹn</span>
+                    <h2 id="rooms-heading">Danh Sách Phòng Trọ Nổi Bật</h2>
+                    <p>Các căn phòng vừa được CTV kiểm duyệt, sẵn sàng đón khách đến xem ngay hôm nay</p>
+                </header>
+
+                <div class="rooms-grid">
+                    <!-- Phòng 1 -->
+                    <article class="room-card" data-aos="fade-up" data-aos-delay="100">
+                        <figure class="room-figure">
+                            <img src="assets/images/room-1.webp" alt="Phòng Studio Cao Cấp Q.9" class="room-img"
+                                width="350" height="230" loading="lazy" decoding="async">
+                            <figcaption class="badge badge-popular">Mở lịch hôm nay</figcaption>
+                        </figure>
+
+                        <div class="room-content">
+                            <!-- Semantic Header bên trong Article -->
+                            <header class="room-header">
+                                <span class="room-tag">Studio cao cấp</span>
+                                <p class="room-price">3.5 Triệu <small>/ tháng</small></p>
+                            </header>
+
+                            <h3 class="room-title">Phòng Studio Ban Công Thoáng Mát Q.9</h3>
+                            <p class="room-location">📍 Gần Khu Công Nghệ Cao, TP. Thủ Đức</p>
+
+                            <!-- Tiện ích phòng -->
+                            <ul class="room-amenities" aria-label="Tiện ích phòng">
+                                <li>📐 28m²</li>
+                                <li>❄️ Máy lạnh</li>
+                                <li>🛏️ Full nội thất</li>
+                                <li>🛵 Giờ tự do</li>
+                            </ul>
+
+                            <!-- Khối CTV phụ trách phòng -->
+                            <aside class="room-ctv-box" aria-label="Cộng tác viên phụ trách căn phòng này">
+                                <img src="assets/images/ctv-1.webp" alt="Ảnh đại diện CTV Hoàng Nam" class="ctv-avatar"
+                                    width="44" height="44" loading="lazy" decoding="async">
+                                <div class="ctv-details">
+                                    <small class="ctv-role">CTV Phụ Trách Trực Tiếp:</small>
+                                    <strong class="ctv-name">Hoàng Nam ⭐ 4.9</strong>
+                                    <span class="ctv-phone">📞 0982.***.123 (Sẵn sàng dẫn)</span>
+                                </div>
+                            </aside>
+
+                            <a href="#booking" class="btn btn-primary btn-block">Đặt Lịch Xem Phòng Này</a>
+                        </div>
+                    </article>
+
+                    <!-- Phòng 2 -->
+                    <article class="room-card" data-aos="fade-up" data-aos-delay="200">
+                        <figure class="room-figure">
+                            <img src="assets/images/room-2.webp" alt="Căn Hộ Mini Gác Lửng Biên Hòa" class="room-img"
+                                width="350" height="230" loading="lazy" decoding="async">
+                            <figcaption class="badge badge-hot">Hot - Giảm cọc</figcaption>
+                        </figure>
+
+                        <div class="room-content">
+                            <header class="room-header">
+                                <span class="room-tag">Căn hộ mini</span>
+                                <p class="room-price">4.2 Triệu <small>/ tháng</small></p>
+                            </header>
+
+                            <h3 class="room-title">Căn Hộ Mini Gác Lửng Đẹp Lung Linh</h3>
+                            <p class="room-location">📍 Gần ĐH Lạc Hồng, TP. Biên Hòa, Đồng Nai</p>
+
+                            <ul class="room-amenities" aria-label="Tiện ích phòng">
+                                <li>📐 35m²</li>
+                                <li>🛗 Thang máy</li>
+                                <li>🍳 Bếp riêng</li>
+                                <li>🔒 Vân tay</li>
+                            </ul>
+
+                            <aside class="room-ctv-box" aria-label="Cộng tác viên phụ trách căn phòng này">
+                                <img src="assets/images/ctv-2.webp" alt="Ảnh đại diện CTV Mai Anh" class="ctv-avatar"
+                                    width="44" height="44" loading="lazy" decoding="async">
+                                <div class="ctv-details">
+                                    <small class="ctv-role">CTV Phụ Trách Trực Tiếp:</small>
+                                    <strong class="ctv-name">Mai Anh ⭐ 5.0</strong>
+                                    <span class="ctv-phone">📞 0903.***.456 (Sẵn sàng dẫn)</span>
+                                </div>
+                            </aside>
+
+                            <a href="#booking" class="btn btn-primary btn-block">Đặt Lịch Xem Phòng Này</a>
+                        </div>
+                    </article>
+
+                    <!-- Phòng 3 -->
+                    <article class="room-card" data-aos="fade-up" data-aos-delay="300">
+                        <figure class="room-figure">
+                            <img src="assets/images/room-3.webp" alt="Phòng Trọ Sinh Viên Sạch Sẽ Bửu Long"
+                                class="room-img" width="350" height="230" loading="lazy" decoding="async">
+                            <figcaption class="badge badge-eco">Tiết kiệm</figcaption>
+                        </figure>
+
+                        <div class="room-content">
+                            <header class="room-header">
+                                <span class="room-tag">Sinh viên / Người đi làm</span>
+                                <p class="room-price">2.2 Triệu <small>/ tháng</small></p>
+                            </header>
+
+                            <h3 class="room-title">Phòng Trọ Sạch Sẽ, An Ninh, Giá Rẻ</h3>
+                            <p class="room-location">📍 P. Bửu Long, TP. Biên Hòa, Đồng Nai</p>
+
+                            <ul class="room-amenities" aria-label="Tiện ích phòng">
+                                <li>📐 20m²</li>
+                                <li>🚿 WC riêng</li>
+                                <li>📶 Wifi free</li>
+                                <li>🛵 Giữ xe 0đ</li>
+                            </ul>
+
+                            <aside class="room-ctv-box" aria-label="Cộng tác viên phụ trách căn phòng này">
+                                <img src="assets/images/ctv-3.webp" alt="Ảnh đại diện CTV Quốc Bảo" class="ctv-avatar"
+                                    width="44" height="44" loading="lazy" decoding="async">
+                                <div class="ctv-details">
+                                    <small class="ctv-role">CTV Phụ Trách Trực Tiếp:</small>
+                                    <strong class="ctv-name">Quốc Bảo ⭐ 4.8</strong>
+                                    <span class="ctv-phone">📞 0978.***.789 (Sẵn sàng dẫn)</span>
+                                </div>
+                            </aside>
+
+                            <a href="#booking" class="btn btn-primary btn-block">Đặt Lịch Xem Phòng Này</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 5: ĐỘI NGŨ CỘNG TÁC VIÊN TIÊU BIỂU (Semantic <article>)
+             ========================================================================== -->
+        <section id="collaborators" class="collaborators-section" aria-labelledby="ctv-heading">
+            <div class="container">
+                <header class="section-title" data-aos="fade-up">
+                    <span class="section-subtitle">Người Đồng Hành Đáng Tin Cậy</span>
+                    <h2 id="ctv-heading">Đội Ngũ Cộng Tác Viên Tiêu Biểu</h2>
+                    <p>Các cộng tác viên xuất sắc với số lượt dẫn xem phòng và đánh giá hài lòng cao nhất từ khách thuê
+                    </p>
+                </header>
+
+                <div class="ctv-grid">
+                    <article class="ctv-card" data-aos="zoom-in" data-aos-delay="100">
+                        <figure class="ctv-card-header">
+                            <img src="assets/images/ctv-1.webp" alt="CTV Nguyễn Minh Hoàng" class="ctv-profile-img"
+                                width="90" height="90" loading="lazy" decoding="async">
+                            <figcaption class="ctv-badge-check">✓ Đã xác thực</figcaption>
+                        </figure>
+                        <h3>Nguyễn Minh Hoàng</h3>
+                        <p class="ctv-area">📍 Khu vực: TP. Thủ Đức & Q.9</p>
+                        <p class="ctv-bio">Chuyên hỗ trợ sinh viên và kỹ sư công nghệ tìm phòng studio, chung cư mini
+                            gần trạm Metro.</p>
+
+                        <ul class="ctv-stats" aria-label="Thống kê thành tích của CTV">
+                            <li class="stat-item">
+                                <strong>185+</strong>
+                                <small>Lượt dẫn xem</small>
+                            </li>
+                            <li class="stat-item">
+                                <strong>4.9 / 5.0</strong>
+                                <small>Đánh giá ⭐</small>
+                            </li>
+                        </ul>
+                        <a href="#booking" class="btn btn-outline btn-sm btn-block">Đặt Lịch Với Hoàng</a>
+                    </article>
+
+                    <article class="ctv-card" data-aos="zoom-in" data-aos-delay="200">
+                        <figure class="ctv-card-header">
+                            <img src="assets/images/ctv-2.webp" alt="CTV Trần Thị Mai Anh" class="ctv-profile-img"
+                                width="90" height="90" loading="lazy" decoding="async">
+                            <figcaption class="ctv-badge-check">✓ Đã xác thực</figcaption>
+                        </figure>
+                        <h3>Trần Thị Mai Anh</h3>
+                        <p class="ctv-area">📍 Khu vực: TP. Biên Hòa (ĐH Lạc Hồng)</p>
+                        <p class="ctv-bio">Tận tình, chu đáo, sẵn sàng hỗ trợ tân sinh viên đi khảo sát phòng trọ các
+                            cung đường Bửu Long.</p>
+
+                        <ul class="ctv-stats" aria-label="Thống kê thành tích của CTV">
+                            <li class="stat-item">
+                                <strong>240+</strong>
+                                <small>Lượt dẫn xem</small>
+                            </li>
+                            <li class="stat-item">
+                                <strong>5.0 / 5.0</strong>
+                                <small>Đánh giá ⭐</small>
+                            </li>
+                        </ul>
+                        <a href="#booking" class="btn btn-outline btn-sm btn-block">Đặt Lịch Với Mai Anh</a>
+                    </article>
+
+                    <article class="ctv-card" data-aos="zoom-in" data-aos-delay="300">
+                        <figure class="ctv-card-header">
+                            <img src="assets/images/ctv-3.webp" alt="CTV Lê Quốc Bảo" class="ctv-profile-img" width="90"
+                                height="90" loading="lazy" decoding="async">
+                            <figcaption class="ctv-badge-check">✓ Đã xác thực</figcaption>
+                        </figure>
+                        <h3>Lê Quốc Bảo</h3>
+                        <p class="ctv-area">📍 Khu vực: Làng Đại Học & Dĩ An</p>
+                        <p class="ctv-bio">Kinh nghiệm 3 năm làm CTV nhà trọ sinh viên, hỗ trợ thương lượng giá trực
+                            tiếp không qua trung gian đắt đỏ.</p>
+
+                        <ul class="ctv-stats" aria-label="Thống kê thành tích của CTV">
+                            <li class="stat-item">
+                                <strong>195+</strong>
+                                <small>Lượt dẫn xem</small>
+                            </li>
+                            <li class="stat-item">
+                                <strong>4.8 / 5.0</strong>
+                                <small>Đánh giá ⭐</small>
+                            </li>
+                        </ul>
+                        <a href="#booking" class="btn btn-outline btn-sm btn-block">Đặt Lịch Với Bảo</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 6: BIỂU MẪU ĐẶT LỊCH HẸN VỚI CỘNG TÁC VIÊN
+             ========================================================================== -->
+        <section id="booking" class="booking-section" aria-labelledby="booking-heading">
+            <div class="container" data-aos="fade-up">
+                <div class="booking-wrapper">
+                    <div class="booking-info">
+                        <span class="section-subtitle">Đăng Ký Nhanh Chóng</span>
+                        <h2 id="booking-heading">Đặt Lịch Xem Phòng Trực Tiếp Cùng CTV</h2>
+                        <p>Điền thông tin và thời gian thuận tiện của bạn. Hệ thống sẽ kết nối với CTV gần nhất để hẹn
+                            giờ đón dẫn bạn xem phòng.</p>
+
+                        <ul class="booking-perks" role="list">
+                            <li class="perk-item">
+                                <span class="perk-icon" aria-hidden="true">⏱️</span>
+                                <div class="perk-text">
+                                    <strong>Liên hệ sau 15 phút</strong>
+                                    <small>CTV sẽ gọi điện xác nhận và gửi vị trí hẹn đón</small>
+                                </div>
+                            </li>
+                            <li class="perk-item">
+                                <span class="perk-icon" aria-hidden="true">🛡️</span>
+                                <div class="perk-text">
+                                    <strong>Hoàn toàn miễn phí</strong>
+                                    <small>Người thuê không phải chi trả bất kỳ khoản phí dịch vụ nào</small>
+                                </div>
+                            </li>
+                            <li class="perk-item">
+                                <span class="perk-icon" aria-hidden="true">📍</span>
+                                <div class="perk-text">
+                                    <strong>Đón dẫn tận nơi</strong>
+                                    <small>Hẹn gặp tại điểm mốc thuận tiện nhất cho bạn</small>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Biểu mẫu Semantic Form -->
+                    <form class="booking-form" action="#booking" method="get">
+                        <header class="form-title">
+                            <h3>Phiếu Đặt Lịch Xem Phòng</h3>
+                            <p>Tiếp nhận yêu cầu hẹn xem 24/7</p>
+                        </header>
+
+                        <div class="form-group">
+                            <label for="fullname">Họ và tên của bạn <span class="required"
+                                    aria-hidden="true">*</span></label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Ví dụ: Nguyễn Văn Tuyền"
+                                autocomplete="name" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại / Zalo <span class="required"
+                                        aria-hidden="true">*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="Ví dụ: 0908458065"
+                                    pattern="[0-9]{10,11}" autocomplete="tel" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-time">Thời gian hẹn xem dự kiến <span class="required"
+                                        aria-hidden="true">*</span></label>
+                                <input type="datetime-local" id="booking-time" name="booking-time" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="room-select">Căn phòng / Khu vực bạn muốn xem <span class="required"
+                                    aria-hidden="true">*</span></label>
+                            <select id="room-select" name="room-select" required>
+                                <option value="">-- Chọn phòng hoặc khu vực --</option>
+                                <option value="studio-q9">Phòng Studio Cao Cấp Q.9 (3.5 Triệu)</option>
+                                <option value="mini-bienhoa">Căn Hộ Mini Gác Lửng Biên Hòa (4.2 Triệu)</option>
+                                <option value="sv-buulong">Phòng Trọ Sinh Viên Sạch Sẽ Bửu Long (2.2 Triệu)</option>
+                                <option value="custom-bienhoa">Khu vực TP. Biên Hòa (Tìm phòng theo yêu cầu)</option>
+                                <option value="custom-thuduc">Khu vực TP. Thủ Đức / Q.9 (Tìm phòng theo yêu cầu)
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ctv-select">Chọn Cộng Tác Viên Hỗ Trợ (Tùy chọn)</label>
+                            <select id="ctv-select" name="ctv-select">
+                                <option value="auto">⚡ Hệ thống tự động ghép CTV gần bạn nhất</option>
+                                <option value="hoang">CTV Nguyễn Minh Hoàng (TP. Thủ Đức - Q.9)</option>
+                                <option value="maianh">CTV Trần Thị Mai Anh (Biên Hòa - Lạc Hồng)</option>
+                                <option value="bao">CTV Lê Quốc Bảo (Làng ĐH - Dĩ An)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Ghi chú thêm cho CTV (Yêu cầu đặc biệt)</label>
+                            <textarea id="notes" name="notes" rows="3"
+                                placeholder="Ví dụ: Cần phòng nuôi thú cưng, ban công thoáng, có chỗ để 2 xe máy..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">
+                            <span>🚀 Xác Nhận Đặt Lịch Hẹn Ngay</span>
+                        </button>
+
+                        <p class="form-privacy-note">
+                            🔒 Thông tin của bạn được bảo mật tuyệt đối và chỉ dùng để CTV liên hệ hỗ trợ dẫn xem phòng.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         4. THẺ NGỮ NGHĨA: <footer> (Chân trang chứa Address & Copyright)
+         ========================================================================== -->
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
+            <section class="footer-col footer-col-about" aria-labelledby="footer-about-heading">
+                <div class="logo">
+                    <span class="logo-icon" aria-hidden="true">🏠</span>
+                    <span class="logo-text">TrọNhanh<span class="logo-highlight">.vn</span></span>
+                </div>
+                <p id="footer-about-heading" class="footer-desc">
+                    Hệ sinh thái đặt lịch dịch vụ cho thuê phòng trọ tiên phong kết nối trực tiếp khách thuê với mạng
+                    lưới cộng tác viên bản địa, loại bỏ hoàn toàn tình trạng môi giới lừa đảo, mang lại sự tiện lợi,
+                    minh bạch và an tâm tuyệt đối.
+                </p>
+                <nav class="social-links" aria-label="Mạng xã hội TrọNhanh.vn">
+                    <a href="https://facebook.com" class="social-btn" title="Facebook" aria-label="Facebook">FB</a>
+                    <a href="https://zalo.me" class="social-btn" title="Zalo" aria-label="Zalo">Zalo</a>
+                    <a href="https://youtube.com" class="social-btn" title="YouTube" aria-label="YouTube">YT</a>
+                    <a href="https://tiktok.com" class="social-btn" title="TikTok" aria-label="TikTok">TT</a>
+                </nav>
+            </section>
+
+            <!-- Semantic <address> Element: Dùng h3 để tuân thủ thứ bậc heading tuần tự -->
+            <section class="footer-col" aria-labelledby="footer-contact-heading">
+                <h3 id="footer-contact-heading" class="footer-title">Thông Tin Liên Hệ</h3>
+                <address class="footer-address">
+                    <p>📍 <strong>Văn phòng:</strong> Đường Huỳnh Văn Nghệ, P. Bửu Long, TP. Biên Hòa, Đồng Nai</p>
+                    <p>📞 <strong>Hotline CTV:</strong> <a href="tel:0908458065">0908 458 065</a></p>
+                    <p>✉️ <strong>Email:</strong> <a href="mailto:support@tronhanh.vn">support@tronhanh.vn</a></p>
+                    <p>⏰ <strong>Giờ làm việc:</strong> 07:30 - 21:00 (Tất cả các ngày trong tuần)</p>
+                </address>
+            </section>
+
+            <nav class="footer-col" aria-labelledby="footer-ctv-heading">
+                <h3 id="footer-ctv-heading" class="footer-title">Dành Cho Cộng Tác Viên</h3>
+                <ul class="footer-links">
+                    <li><a href="#booking">Đăng ký trở thành CTV</a></li>
+                    <li><a href="#services">Chính sách hoa hồng CTV</a></li>
+                    <li><a href="#process">Quy chế hoạt động & chuẩn mực</a></li>
+                    <li><a href="#hero">Cổng hỗ trợ CTV khu vực</a></li>
+                    <li><a href="#rooms">Ký gửi phòng trọ mới</a></li>
+                </ul>
+            </nav>
+
+            <section class="footer-col" aria-labelledby="footer-commit-heading">
+                <h3 id="footer-commit-heading" class="footer-title">Cam Kết Dịch Vụ</h3>
+                <ul class="footer-commitments">
+                    <li>✓ Xem phòng 100% miễn phí</li>
+                    <li>✓ CTV tận tâm, đúng giờ hẹn</li>
+                    <li>✓ Thông tin phòng chính xác thực tế</li>
+                    <li>✓ Hỗ trợ pháp lý hợp đồng chu đáo</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p class="copyright">
+                    &copy; 2026 TrọNhanh.vn - Thiết kế bởi Sinh viên: <strong>Nguyễn Văn Tuyền</strong> (MSSV:
+                    <strong>125000363</strong>) - Trường Đại học Lạc Hồng.
+                </p>
+                <nav class="footer-sublinks" aria-label="Chính sách bổ sung">
+                    <a href="#hero">Điều khoản sử dụng</a>
+                    <span aria-hidden="true">•</span>
+                    <a href="#hero">Chính sách bảo mật</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) JavaScript Library: defer và chạy trên sự kiện load tối ưu hóa TBT -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Kích hoạt AOS sau khi tải xong toàn bộ trang, vô hiệu hóa mutation observer liên tục để giảm tải CPU
+        window.addEventListener('load', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 700,
+                    easing: 'ease-out',
+                    once: true,
+                    offset: 50,
+                    disableMutationObserver: true
+                });
+            }
+        });
+
+        // Xử lý lưu trạng thái chế độ Sáng / Tối vào LocalStorage
+        (function () {
+            const toggle = document.getElementById('theme-toggle');
+            const savedTheme = localStorage.getItem('tronhanh_theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                if (toggle) toggle.checked = true;
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+
+            if (toggle) {
+                toggle.addEventListener('change', function () {
+                    const isDark = this.checked;
+                    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+                    localStorage.setItem('tronhanh_theme', isDark ? 'dark' : 'light');
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
